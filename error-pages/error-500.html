@@ -6,7 +6,7 @@
 <!--[if IE 10]>  <html class="ie ie10" lang="en"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en" class="nonIE"><!--<![endif]-->
 	<head>
-        <title>Wikimedia Outage</title>
+        <title>500 Error</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -25,13 +25,13 @@
 
   <div class="container" style="margin-top:100px;">
     <div class="error-top">
-      <h2 class="error-title">We&#8217;re taking a timeout.</h2><span class=
-      "error-desc">Wikimedia servers seem to be under a lot of stress, this is probably
-      temporary and should be fixed soon.</span>
+      <h2 class="error-title">Snap! something went wrong.</h2><span class=
+      "error-desc">Looks like we dropped the ball on this one. This is an issue with Wikimedia server and we&#8217;ve just notified our team about it.</span>
     </div>
 
     <div class="error-action">
-      <button class="linkButton" onclick="$('#ShowDetails').toggle();">View details</button><button class="primary">Reload</button>
+        <button class="linkButton" onclick="$('#ShowDetails').toggle();">View details</button>
+        <button class="primary">Go back</button>
     </div>
   </div>
 
@@ -39,13 +39,16 @@
     <!--            <span class="error-desc">If you are going to report this error, please include following details</span>-->
 
     <div class="code">
+        Error Code: 500 Internal server error<br/>
       Request GET http://en.wikipedia.org from 212.247.189.111 via knsq.wikipedia.org
-      (squid.stable) Error: ERR_CANNOT_FORWARD Resource temporarly unavailable on
+      (squid.stable) ERR_CANNOT_FORWARD Resource temporarly unavailable on
       December 04, 2014 9:26 GMT
 
+<!--
       <p>For updates:&nbsp;&nbsp;<a href="http://status.wikimedia.org">Check system
       status</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/wikimedia">Visit @wikimedia
       twitter</a></p>
+-->
     </div>
   </div>
 
