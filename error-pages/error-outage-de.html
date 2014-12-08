@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 7]>     <html class="ie ie7 ltie9 ltie8 ltie10" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 ltie9 ltie10" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 ltie10" lang="en"> <![endif]-->
+<!--[if IE 10]>  <html class="ie ie10" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="nonIE"><!--<![endif]-->
+	<head>
+        <title>Wikimedia Outage</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <style type="text/css">
+            
+            body{box-sizing:border-box;-webkit-box-sizing:border-box;font-family:"Nimbus Sans L","Liberation Sans","Helvetica Neue",Helvetica,Arial,sans-serif;background-color:#f8f8f8;color:#2e2e2e;margin:0}.clearfix:after{content:" ";visibility:hidden;display:block;height:0;clear:both}.container{min-width:320px;max-width:600px;margin:0 auto;padding:0 20px}.donation{background-color:#efefef;padding:30px;border-radius:2px;margin-top:150px}.donation h3{font-family:Georgia,Times,serif;font-style:italic;font-weight:400;color:#777;font-size:20px;margin:0 0 15px}h1,h2{margin:0}h1{font-weight:300;font-size:40px}h2{font-family:Georgia,serif;font-weight:400;font-size:40px;display:block;margin-bottom:10px}.error-desc{margin:20px 0;color:#777;font-size:20px;line-height:30px;font-weight:300}button{font-family:inherit;font-size:1em;display:inline-block;padding:.5em 1em;margin:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;zoom:1;color:#555;background:0 0;border:none;border-radius:2px;min-width:4em;vertical-align:middle;text-align:center;font-weight:700;cursor:pointer}button:hover{color:#777;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}button.neutral{border:1px solid #CCC;background:#FFF}button.primary{background:#347bff;color:#fff;border:1px solid #347bff;border-left:0;border-right:0;text-shadow:0 1px rgba(0,0,0,.1)}button.primary:hover{color:#fff}button.linkButton:hover{box-shadow:none}button+button{margin-left:10px}.dialog{border-radius:1px;padding:40px;background-color:#fff;box-shadow:0 2px 2px 0 rgba(0,0,0,.09)}.error-action{margin-top:20px;text-align:right;padding-top:20px}.wmf-logo{width:100px;height:37px;background-repeat:no-repeat;background-size:100px 37px;background-image:url(data:image/png;base64,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)}.wmf-emblem{width:81px;height:81px;background-repeat:no-repeat;background-size:81px 81px;float:left;margin-right:25px;opacity:.5;margin-top:-2px;background-image:url(data:image/png;base64,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)}#ShowDetails{display:none}.code{font-size:12px;font-family:Courier,sans-serif;margin-top:50px;line-height:20px}
+        </style>
+    </head>
+    
+    
+    
+<body>
+  <div class="container" alt="Wikimedia Foundation">
+  <div class="wmf-logo" style="margin-top:10px;"></div>
+    </div>
+
+  <div class="container" style="margin-top:100px;">
+    <div class="error-top">
+      <h2 class="error-title">Wir nehmen eine Auszeit.</h2><span class=
+      "error-desc">Wikimedia -Server scheinen unter eine Menge Stress zu sein, ist dies wahrscheinlich
+      vorübergehend und sollte bald behoben sein .</span>
+    </div>
+
+    <div class="error-action">
+      <button class="linkButton" onclick="$('#ShowDetails').toggle();">Detailansicht</button><button class="primary">Nachladen</button>
+    </div>
+  </div>
+
+  <div class="container details" id="ShowDetails">
+    <!--            <span class="error-desc">If you are going to report this error, please include following details</span>-->
+
+    <div class="code">
+      Request GET http://en.wikipedia.org from 212.247.189.111 via knsq.wikipedia.org
+      (squid.stable) Error: ERR_CANNOT_FORWARD Resource temporarly unavailable on
+      December 04, 2014 9:26 GMT
+
+      <p>Nach Updates suchen:&nbsp;&nbsp;<a href="http://status.wikimedia.org">Check system
+      status</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/wikimedia">Visit @wikimedia
+      twitter</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="donation">
+        <div class="wmf-emblem"></div>
+        <h3>Helfen Sie uns zu verbessern</h3><button class="neutral">Make $5
+        donation</button>
+    </div>
+  </div>
+</body>
