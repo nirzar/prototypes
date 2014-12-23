@@ -291,6 +291,41 @@
 
             }
             
+            
+            button.mw-ui-button.loading-four, button.mw-ui-button.loading-four:hover {
+                position: relative;
+                
+                border-color: transparent;
+                
+                text-shadow: none;
+                box-shadow: inset 0px -3px 0px rgba(0,0,0,.1);
+                cursor: wait;
+                
+            }
+            button.mw-ui-button.loading-four:after, button.mw-ui-button.loading-four:hover:after {
+                content: " ";
+                position: absolute;
+                height: 3px;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                
+                display: block;
+                background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.3) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3)), -webkit-linear-gradient(top, #2e77ff, #2e77ff);
+                    background-repeat: repeat;
+                  -webkit-background-size: 20px 20px, 100% 100%;
+                  -moz-background-size: 40px 40px, 100% 100%;
+                  -ms-background-size: 40px 40px, 100% 100%;
+                  -o-background-size: 40px 40px, 100% 100%;
+                  background-size: 20px 20px, 100% 100%;
+                  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
+                  -moz-animation: progress-bar-stripes 2s linear infinite;
+                  -ms-animation: progress-bar-stripes 2s linear infinite;
+                  -o-animation: progress-bar-stripes 2s linear infinite;
+                  animation: progress-bar-stripes 2s linear infinite;    
+
+
+            }
 
 
             @-webkit-keyframes indeterminate-bar {
@@ -380,7 +415,7 @@
       
       <div class="row clearfix" style="margin-top:50px;">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Save</button></div>
-        <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-three">Saving...</button></div>
+        <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-four">Saving...</button></div>
         <div class="four columns"><button id="loadThree" class="mw-ui-button mw-ui-progressive" onclick="loadThree();">Save</button></div>
       </div>  
       
@@ -429,10 +464,10 @@
     }
     function loadThree() {
         $("#loadThree").html("Saving...");
-        $("#loadThree").addClass("loading-three");
+        $("#loadThree").addClass("loading-four");
         
         setTimeout(function(){$("#loadThree").html("Save");
-        $("#loadThree").removeClass("loading-three"); }, 2000);
+        $("#loadThree").removeClass("loading-four"); }, 2000);
     }
     function loadFour() {
         $("#loadFour").html("Saving...");
