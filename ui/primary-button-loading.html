@@ -377,22 +377,149 @@
             }
             
             @-webkit-keyframes progress-bar-stripes {
-  from { background-position: 0 0; }
-  to { background-position: 40px 0; }
-}
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
 
-@-moz-keyframes progress-bar-stripes {
-  from { background-position: 0 0; }
-  to { background-position: 40px 0; }
-}
+            @-moz-keyframes progress-bar-stripes {
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
 
-@keyframes progress-bar-stripes {
-  from { background-position: 0 0; }
-  to { background-position: 40px 0; }
-}
-
+            @keyframes progress-bar-stripes {
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
             
+            button.mw-ui-button.loading-dots, button.mw-ui-button.loading-dots:hover {
+                position: relative;
+                color: transparent;
+                border-color: transparent;
+                //background: #eee;
+                text-shadow: none;
+                box-shadow: none;
+                cursor: wait;
+                white-space: nowrap;
+                transition: all 0.2s linear;
+                
+            }
+            button.mw-ui-button.loading-dots.blue, button.mw-ui-button.loading-dots.blue:hover {
+                background: #eee;
+            }
             
+            .spinner {
+              left: 10%;
+              width: 70px;
+                margin-top: 2px;
+              opacity: 0.75;
+              display: inline-block;
+              white-space: nowrap;
+                position: absolute;
+            }
+            
+            button.mw-ui-button.loading-dots.blue .bounce, button.mw-ui-button.loading-dots.blue .spinner:after, button.mw-ui-button.loading-dots.blue .spinner:before {
+                background-color: #ddd;
+                -webkit-animation: bouncedelayBlue 1s infinite ease-in-out;
+              animation: bouncedelayBlue 1s infinite ease-in-out;
+            }
+            
+            button.mw-ui-button.loading-dots .bounce, button.mw-ui-button.loading-dots .spinner:after, button.mw-ui-button.loading-dots .spinner:before {
+             content: ' ';
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+            margin-right: 1px;
+              background-color: #fff;
+              border-radius: 100%;
+              display: inline-block;
+              -webkit-animation: bouncedelay 1s infinite ease-in-out;
+              animation: bouncedelay 1s infinite ease-in-out;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-delay: -.16s;
+              animation-delay: -.16s;
+            
+            }
+            
+            button.mw-ui-button.loading-dots .spinner:after{
+              -webkit-animation-delay: 0;
+                animation-delay: 0;
+            }
+            
+            button.mw-ui-button.loading-dots .spinner:before{
+              -webkit-animation-delay: -.33s;
+                animation-delay: -.33s;
+            }
+
+            button.mw-ui-button.loading-dots.blue .spinner:after{
+              -webkit-animation-delay: 0;
+                animation-delay: 0;
+            }
+            
+            button.mw-ui-button.loading-dots.blue .spinner:before{
+              -webkit-animation-delay: -.33s;
+                animation-delay: -.33s;
+            }
+            
+            @-webkit-keyframes bouncedelay {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                background-color: rgba(255,255,255,0.8);
+
+              }
+            }
+            
+            @-webkit-keyframes bouncedelayBlue {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                background-color: #bbb;
+
+              }
+            }
+
+                        @keyframes bouncedelayBlue {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                -ms-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+              }
+            }
+            
+            @keyframes bouncedelay {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                -ms-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+              }
+            }
             
         </style>
     </head>
@@ -408,7 +535,22 @@
         <div class="four columns">Try me</div>
       </div>
 
+      
       <div class="row clearfix" style="margin-top:20px;">
+        <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Update</button></div>
+        <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-dots">Update<span class="spinner"><span class="bounce"></span></span></button></div>
+        <div class="four columns"><button id="loadDots" class="mw-ui-button mw-ui-progressive" onclick="loadDots();">Update<span class="spinner"><span class="bounce"></span></span></button></div>
+      </div>
+      
+      
+            <div class="row clearfix" style="margin-top:50px;">
+        <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Update</button></div>
+        <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-dots blue">Update<span class="spinner"><span class="bounce"></span></span></button></div>
+        <div class="four columns"><button id="loadDotsBlue" class="mw-ui-button mw-ui-progressive blue" onclick="loadDotsBlue();">Update<span class="spinner"><span class="bounce"></span></span></button></div>
+      </div>
+      
+      
+      <div class="row clearfix" style="margin-top:50px;">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Update</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-one">Updating...</button></div>
         <div class="four columns"><button id="loadOne" class="mw-ui-button mw-ui-progressive" onclick="loadOne();">Update</button></div>
@@ -476,6 +618,22 @@
         
         setTimeout(function(){$("#loadFour").html("Save");
         $("#loadFour").removeClass("loading-three"); }, 2000);
-    }    
+    }
+    
+   function loadDots() {
+        
+        $("#loadDots").addClass("loading-dots");
+        
+        setTimeout(function(){
+        $("#loadDots").removeClass("loading-dots"); }, 3500);
+    }
+    
+    function loadDotsBlue() {
+        
+        $("#loadDotsBlue").addClass("loading-dots");
+        
+        setTimeout(function(){
+        $("#loadDotsBlue").removeClass("loading-dots"); }, 3500);
+    }
 </script>
 </body>
