@@ -17,7 +17,7 @@
                 box-sizing:border-box;
                 -webkit-box-sizing:border-box;
                 font-family: "Nimbus Sans L","Liberation Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
-                background-color: #f8f8f8;
+                background-color: #fff;
                 color: #333;
                 margin: 0;
                 
@@ -146,6 +146,7 @@
                 text-align: center;
                 font-weight: 700;
                 cursor: pointer;
+                transition: background 0.4s linear;
                 
             }
             .mw-ui-button:hover {
@@ -296,7 +297,6 @@
                 position: relative;
                 
                 border-color: transparent;
-                
                 text-shadow: none;
                 box-shadow: inset 0px -3px 0px rgba(0,0,0,.1);
                 cursor: wait;
@@ -400,18 +400,20 @@
                 box-shadow: none;
                 cursor: wait;
                 white-space: nowrap;
-                transition: all 0.2s linear;
+                opacity: 0.8;
+                transition: background 0.4s linear;
                 
             }
             button.mw-ui-button.loading-dots.blue, button.mw-ui-button.loading-dots.blue:hover {
                 background: #eee;
+                opacity: 1;
             }
             
             .spinner {
               left: 10%;
               width: 70px;
-                margin-top: 2px;
-              opacity: 0.75;
+              margin-top: 0px;
+              
               display: inline-block;
               white-space: nowrap;
                 position: absolute;
@@ -428,8 +430,8 @@
             button.mw-ui-button.loading-dots .bounce, button.mw-ui-button.loading-dots .spinner:after, button.mw-ui-button.loading-dots .spinner:before {
              content: ' ';
               display: inline-block;
-              width: 15px;
-              height: 15px;
+              width: 12px;
+              height: 12px;
             margin-right: 1px;
               background-color: #fff;
               border-radius: 100%;
@@ -538,7 +540,7 @@
       </div>
 
       
-      <div class="row clearfix" style="margin-top:20px;">
+      <div class="row clearfix" style="margin-top:20px;display:none">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Update</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-dots">Update<span class="spinner"><span class="bounce"></span></span></button></div>
         <div class="four columns"><button id="loadDots" class="mw-ui-button mw-ui-progressive" onclick="loadDots();">Update<span class="spinner"><span class="bounce"></span></span></button></div>
@@ -552,32 +554,32 @@
       </div>
       
       
-      <div class="row clearfix" style="margin-top:50px;">
+      <div class="row clearfix" style="margin-top:50px;display:none">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Update</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-one">Updating...</button></div>
         <div class="four columns"><button id="loadOne" class="mw-ui-button mw-ui-progressive" onclick="loadOne();">Update</button></div>
       </div>
       
-      <div class="row clearfix" style="margin-top:50px;">
+      <div class="row clearfix" style="margin-top:50px;display:none">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Save</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-four">Saving...</button></div>
         <div class="four columns"><button id="loadThree" class="mw-ui-button mw-ui-progressive" onclick="loadThree();">Save</button></div>
       </div>  
       
-      <div class="row clearfix" style="margin-top:50px;">
+      <div class="row clearfix" style="margin-top:50px;display:none">
         <div class="four columns"><button class="mw-ui-button mw-ui-constructive">Save</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-constructive loading-three">Saving...</button></div>
         <div class="four columns"><button id="loadFour" class="mw-ui-button mw-ui-constructive" onclick="loadFour();">Save</button></div>
       </div>  
       
       
-      <div class="row clearfix" style="margin-top:50px;">
+      <div class="row clearfix" style="margin-top:50px;display:none">
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive">Refresh</button></div>
         <div class="four columns"><button class="mw-ui-button mw-ui-progressive loading-two">Refreshing...</button></div>
         <div class="four columns"><button id="loadTwo" class="mw-ui-button mw-ui-progressive" onclick="loadTwo();">Refresh</button></div>
       </div>
       
-            <div class="row clearfix" style="margin-top:50px; font-size: 15px; line-height:150%;">
+            <div class="row clearfix" style="margin-top:50px; font-size: 15px; line-height:150%;display:none">
                 First three are similar to indeterminate progress bar <a href="http://www.google.com/design/spec/components/progress-activity.html" target="_blank">here.</a>
                 <br /><br />
                 The last one is in-line with the media viewer progress style.
