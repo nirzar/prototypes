@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 7]>     <html class="ie ie7 ltie9 ltie8 ltie10" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 ltie9 ltie10" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 ltie10" lang="en"> <![endif]-->
+<!--[if IE 10]>  <html class="ie ie10" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="nonIE"><!--<![endif]-->
+	<head>
+        <title>MW Buttons</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--link href="https://tools.wmflabs.org/styleguide/desktop/public/style.css" rel="stylesheet" /-->
+        <style type="text/css">
+            * { Box-sizing: Border-box }
+            body {
+                box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+                font-family: "Nimbus Sans L","Liberation Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+                background-color: #fff;
+                color: #333;
+                margin: 0;
+                margin-bottom: 150px;
+                
+            }
+            .clearfix:after {
+               content: " "; /* Older browser do not support empty content */
+               visibility: hidden;
+               display: block;
+               height: 0;
+               clear: both;
+            }
+            
+            .container {
+              position: relative; 
+              width: 100%; 
+              max-width: 960px; 
+              margin: 0 auto; 
+              padding: 0 20px;
+              box-sizing: border-box; }
+            .column,        
+            .columns { 
+              width: 100%; 
+              float: left; 
+              box-sizing: border-box; }
+
+            /* For devices larger than 400px */
+            @media (min-width: 400px) {
+              .container {
+                width: 85%;
+                padding: 0; }
+            }
+
+            /* For devices larger than 550px */
+            @media (min-width: 550px) {
+              .container {
+                  
+                width: 80%; }
+              .column,
+              .columns {
+                margin-left: 4%; }
+              .column:first-child,        
+              .columns:first-child { 
+                margin-left: 0; }
+
+              .one.column,
+              .one.columns                    { width: 4.66666666667%; }
+              .two.columns                    { width: 13.3333333333%; }
+              .three.columns                  { width: 22%;            }
+              .four.columns                   { width: 30.6666666667%; }
+              .five.columns                   { width: 39.3333333333%; }
+              .six.columns                    { width: 48%;            }
+              .seven.columns                  { width: 56.6666666667%; }
+              .eight.columns                  { width: 65.3333333333%; }
+              .nine.columns                   { width: 74.0%;          }
+              .ten.columns                    { width: 82.6666666667%; }
+              .eleven.columns                 { width: 91.3333333333%; }
+              .twelve.columns                 { width: 100%; margin-left: 0; }
+
+              .one-third.column               { width: 30.6666666667%; }
+              .two-thirds.column              { width: 65.3333333333%; }
+
+              .one-half.column                { width: 48%; }
+
+              /* Offsets */
+              .offset-by-one.column,
+              .offset-by-one.columns          { margin-left: 8.66666666667%; }
+              .offset-by-two.column,
+              .offset-by-two.columns          { margin-left: 17.3333333333%; }
+              .offset-by-three.column,
+              .offset-by-three.columns        { margin-left: 26%;            }
+              .offset-by-four.column,
+              .offset-by-four.columns         { margin-left: 34.6666666667%; }
+              .offset-by-five.column,
+              .offset-by-five.columns         { margin-left: 43.3333333333%; }
+              .offset-by-six.column,
+              .offset-by-six.columns          { margin-left: 52%;            }
+              .offset-by-seven.column,
+              .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+              .offset-by-eight.column,
+              .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+              .offset-by-nine.column,
+              .offset-by-nine.columns         { margin-left: 78.0%;          }
+              .offset-by-ten.column,
+              .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+              .offset-by-eleven.column,
+              .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+              .offset-by-one-third.column,
+              .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+              .offset-by-two-thirds.column,
+              .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+              .offset-by-one-half.column,
+              .offset-by-one-half.columns     { margin-left: 52%; }
+
+            }
+
+            .container {
+                min-width: 320px;
+                max-width:800px;
+                margin:0px auto;
+                padding: 0px 20px;
+            }
+            
+            
+            
+            
+            .mw-ui-button {
+                font-family: inherit;
+                font-size: 1em;
+                display: inline-block;
+                padding: .5em 1em;
+                margin: 0;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                *display: inline;
+                zoom: 1;
+                background: #FFF;
+                color: #555;
+                border: 1px solid #CCC;
+                border-radius: 2px;
+                min-width: 4em;
+                vertical-align: middle;
+                text-align: center;
+                font-weight: 700;
+                cursor: pointer;
+                transition: background 0.1s linear;
+                
+            }
+            .mw-ui-button:hover {
+                box-shadow: 0 1px rgba(0, 0, 0, .1), inset 0 -3px rgba(0, 0, 0, .2);
+                border-bottom-color: #ccc;
+                outline: 0;
+            }
+            .mw-ui-button:focus {
+                outline: 0;
+            }
+            .mw-ui-button:hover::-moz-focus-inner, .mw-ui-button:focus::-moz-focus-inner {
+                border-color: transparent;
+            }
+            .mw-ui-button:active, .mw-ui-button.mw-ui-checked {
+                background: #ccc;
+                box-shadow: none;
+            }
+            .mw-ui-button:hover, .mw-ui-button:active, .mw-ui-button:visited {
+                color: #555;
+            }
+            .mw-ui-button:disabled {
+                color: #CCC;
+            }
+            .mw-ui-button:disabled:hover, .mw-ui-button:disabled:active {
+                background: #FFF;
+                box-shadow: none;
+            }
+            .mw-ui-button:disabled {
+                text-shadow: none;
+                cursor: default;
+            }
+            .mw-ui-button.mw-ui-big {
+                font-size: 1.3em;
+            }
+            .mw-ui-button.mw-ui-block {
+                display: block;
+                width: 100%}
+            .mw-ui-button.mw-ui-progressive, .mw-ui-button.mw-ui-primary {
+                background: #347bff;
+                color: #fff;
+                border: 1px solid #347bff;
+                text-shadow: 0 1px rgba(0, 0, 0, .1);
+            }
+            .mw-ui-button.mw-ui-progressive:hover, .mw-ui-button.mw-ui-primary:hover {
+                box-shadow: 0 1px rgba(0, 0, 0, .1), inset 0 -3px rgba(0, 0, 0, .2);
+                border-bottom-color: #2a62cc;
+                outline: 0;
+            }
+            .mw-ui-button.mw-ui-progressive:hover::-moz-focus-inner, .mw-ui-button.mw-ui-progressive:focus::-moz-focus-inner, .mw-ui-button.mw-ui-primary:hover::-moz-focus-inner, .mw-ui-button.mw-ui-primary:focus::-moz-focus-inner {
+                border-color: transparent;
+            }
+            .mw-ui-button.mw-ui-progressive:active, .mw-ui-button.mw-ui-progressive.mw-ui-checked, .mw-ui-button.mw-ui-primary:active, .mw-ui-button.mw-ui-primary.mw-ui-checked {
+                background: #2a62cc;
+                box-shadow: none;
+            }
+            .mw-ui-button.mw-ui-progressive:disabled, .mw-ui-button.mw-ui-primary:disabled {
+                background: #CCC;
+                border-color: #CCC;
+            }
+            .mw-ui-button.mw-ui-progressive:disabled:hover, .mw-ui-button.mw-ui-progressive:disabled:active, .mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked, .mw-ui-button.mw-ui-primary:disabled:hover, .mw-ui-button.mw-ui-primary:disabled:active, .mw-ui-button.mw-ui-primary:disabled.mw-ui-checked {
+                box-shadow: none;
+            }
+            
+            .mw-ui-button.mw-ui-constructive {
+                background: #00af89;
+                color: #fff;
+                border: 1px solid #00af89;
+                text-shadow: 0 1px rgba(0, 0, 0, .1);
+            }
+            .mw-ui-button.mw-ui-constructive:hover {
+                box-shadow: 0 1px rgba(0, 0, 0, .1), inset 0 -3px rgba(0, 0, 0, .2);
+                border-bottom-color: #008c6e;
+                outline: 0;
+            }
+            .mw-ui-button.mw-ui-constructive:hover::-moz-focus-inner {
+                border-color: transparent;
+            }
+            .mw-ui-button.mw-ui-constructive:active, .mw-ui-button.mw-ui-constructive.mw-ui-checked {
+                background: #008c6e;
+                box-shadow: none;
+            }
+            .mw-ui-button.mw-ui-constructive:disabled {
+                background: #CCC;
+                border-color: #CCC;
+            }
+            .mw-ui-button.mw-ui-constructive:disabled:hover, .mw-ui-button.mw-ui-constructive:disabled:active, .mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked {
+                box-shadow: none;
+            }
+            
+            
+            
+            button.mw-ui-button.loading-one, 
+            button.mw-ui-button.loading-one:hover {
+                position: relative;
+                background: #eee;
+                border-color: transparent !important;
+                color: #777;
+                text-shadow: none;
+                box-shadow: inset 0px -3px 0px rgba(0,0,0,.1);
+                cursor: wait;
+            }
+            button.mw-ui-button.loading-one:after, button.mw-ui-button.loading-one:hover:after {
+                content: " ";
+                
+                position: absolute;
+                height: 3px;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                background: #36c;
+                display: block;
+                          -webkit-transform-origin: center center;
+              transform-origin: center center;
+              -webkit-animation: indeterminate-bar 1s linear infinite;
+              animation: indeterminate-bar 1s linear infinite;
+
+            }
+            
+            button.mw-ui-button.loading-three, button.mw-ui-button.loading-three:hover {
+                position: relative;
+                
+                border-color: transparent;
+                
+                text-shadow: none;
+                box-shadow: inset 0px -3px 0px rgba(0,0,0,.1);
+                cursor: wait;
+
+            }
+            button.mw-ui-button.loading-three:after, button.mw-ui-button.loading-three:hover:after {
+                content: " ";
+                
+                position: absolute;
+                height: 3px;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                background: #fff;
+                display: block;
+                          -webkit-transform-origin: center center;
+              transform-origin: center center;
+              -webkit-animation: indeterminate-bar 1s linear infinite;
+              animation: indeterminate-bar 1s linear infinite;
+
+            }
+            
+            
+            button.mw-ui-button.loading-four, button.mw-ui-button.loading-four:hover {
+                position: relative;
+                
+                border-color: transparent;
+                text-shadow: none;
+                box-shadow: inset 0px -3px 0px rgba(0,0,0,.1);
+                cursor: wait;
+                
+            }
+            button.mw-ui-button.loading-four:after, button.mw-ui-button.loading-four:hover:after {
+                content: " ";
+                position: absolute;
+                height: 3px;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                
+                display: block;
+                background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.3) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3)), -webkit-linear-gradient(top, #2e77ff, #2e77ff);
+                background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.3) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3)), -moz-linear-gradient(top, #2e77ff, #2e77ff);
+                    background-repeat: repeat;
+                  -webkit-background-size: 20px 20px, 100% 100%;
+                  -moz-background-size: 40px 40px, 100% 100%;
+                  -ms-background-size: 40px 40px, 100% 100%;
+                  -o-background-size: 40px 40px, 100% 100%;
+                  background-size: 20px 20px, 100% 100%;
+                  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
+                  -moz-animation: progress-bar-stripes 2s linear infinite;
+                  -ms-animation: progress-bar-stripes 2s linear infinite;
+                  -o-animation: progress-bar-stripes 2s linear infinite;
+                  animation: progress-bar-stripes 2s linear infinite;    
+
+
+            }
+
+
+            @-webkit-keyframes indeterminate-bar {
+              0% {
+                -webkit-transform: translate(-50%) scaleX(0);
+              }
+              50% {
+                -webkit-transform: translate(0%) scaleX(0.3);
+              }
+              100% {
+                -webkit-transform: translate(50%) scaleX(0);
+              }
+            }
+
+            @keyframes indeterminate-bar {
+              0% {
+                transform: translate(-50%) scaleX(0);
+              }
+              50% {
+                transform: translate(0%) scaleX(0.3);
+              }
+              100% {
+                transform: translate(50%) scaleX(0);
+              }
+            }
+            
+            button.mw-ui-button.loading-two, button.mw-ui-button.loading-two:hover {
+                box-shadow: none !important;
+                cursor: wait;
+                background: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #2e77ff, #2e77ff);
+                  background: -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent), -moz-linear-gradient(top, #2e77ff, #2e77ff);
+                  background: -ms-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent), -ms-linear-gradient(top, #2e77ff, #2e77ff);
+                  background: -o-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent), -o-linear-gradient(top, #2e77ff, #2e77ff);
+                  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent), linear-gradient(top, #2e77ff, #2e77ff);
+                  
+                  background-repeat: repeat;
+                  -webkit-background-size: 40px 40px, 100% 100%;
+                  -moz-background-size: 40px 40px, 100% 100%;
+                  -ms-background-size: 40px 40px, 100% 100%;
+                  -o-background-size: 40px 40px, 100% 100%;
+                  background-size: 40px 40px, 100% 100%;
+                  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
+                  -moz-animation: progress-bar-stripes 2s linear infinite;
+                  -ms-animation: progress-bar-stripes 2s linear infinite;
+                  -o-animation: progress-bar-stripes 2s linear infinite;
+                  animation: progress-bar-stripes 2s linear infinite;    
+            
+            }
+            
+            @-webkit-keyframes progress-bar-stripes {
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
+
+            @-moz-keyframes progress-bar-stripes {
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
+
+            @keyframes progress-bar-stripes {
+              from { background-position: 0 0; }
+              to { background-position: 40px 0; }
+            }
+            
+            button.mw-ui-button.loading-dots, button.mw-ui-button.loading-dots:hover {
+                position: relative;
+                color: transparent;
+                border-color: transparent;
+                //background: #eee;
+                text-shadow: none;
+                box-shadow: none;
+                cursor: wait;
+                white-space: nowrap;
+                opacity: 0.8;
+                transition: background 0.1s linear;
+                
+            }
+            button.mw-ui-button.loading-dots.blue, button.mw-ui-button.loading-dots.blue:hover {
+                background: #eee;
+                opacity: 1;
+            }
+            
+            .spinner {
+              left: 10%;
+              width: 70px;
+              margin-top: 0px;
+              
+              display: inline-block;
+              white-space: nowrap;
+                position: absolute;
+            }
+            
+            button.mw-ui-button.loading-dots.blue .bounce, button.mw-ui-button.loading-dots.blue .spinner:after, button.mw-ui-button.loading-dots.blue .spinner:before {
+                background-color: #ddd;
+                -webkit-animation: bouncedelayBlue 1s infinite ease-in-out;
+              animation: bouncedelayBlue 1s infinite ease-in-out;
+                -webkit-animation-delay: -.16s;
+              animation-delay: -.16s;
+            }
+            
+            button.mw-ui-button.loading-dots .bounce, button.mw-ui-button.loading-dots .spinner:after, button.mw-ui-button.loading-dots .spinner:before {
+             content: ' ';
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+            margin-right: 1px;
+              background-color: #fff;
+              border-radius: 100%;
+              display: inline-block;
+              -webkit-animation: bouncedelay 1s infinite ease-in-out;
+              animation: bouncedelay 1s infinite ease-in-out;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-delay: -.16s;
+              animation-delay: -.16s;
+            
+            }
+            
+            button.mw-ui-button.loading-dots .spinner:after{
+              -webkit-animation-delay: 0;
+                animation-delay: 0;
+            }
+            
+            button.mw-ui-button.loading-dots .spinner:before{
+              -webkit-animation-delay: -.33s;
+                animation-delay: -.33s;
+            }
+
+            button.mw-ui-button.loading-dots.blue .spinner:after{
+              -webkit-animation-delay: 0;
+                animation-delay: 0;
+            }
+            
+            button.mw-ui-button.loading-dots.blue .spinner:before{
+              -webkit-animation-delay: -.33s;
+                animation-delay: -.33s;
+            }
+            
+            @-webkit-keyframes bouncedelay {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                background-color: rgba(255,255,255,0.8);
+
+              }
+            }
+            
+            @-webkit-keyframes bouncedelayBlue {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                background-color: #bbb;
+
+              }
+            }
+
+                        @keyframes bouncedelayBlue {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                -ms-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+              }
+            }
+            
+            @keyframes bouncedelay {
+              0%,
+              100%,
+              80% {
+                -webkit-transform: scale(0.6);
+                -ms-transform: scale(0.6);
+                transform: scale(0.6);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+              }
+            }
+            
+            .mw-ui-button.mw-ui-constructive.mw-ui-quiet {
+    color: #555;
+}
+.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover, .mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus {
+    color: #33bfa1;
+}
+.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active, .mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked {
+    color: #008c6e;
+}
+.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled {
+    color: #CCC;
+}
+            
+            .mw-ui-button-group>* {
+    min-width: 48px;
+    border-radius: 0;
+    float: left;
+}
+.mw-ui-button-group>:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.mw-ui-button-group>:not(:first-child) {
+    border-left: 0;
+}
+.mw-ui-button-group>:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+            .mw-ui-button-group.quiet > *{
+                border:1px solid transparent;
+                margin-right: 7px;
+                border-radius: 2px;
+            }
+            
+            .mw-ui-button-group.quiet > .mw-ui-button:hover {
+                
+                
+                border: 1px solid #CCC;
+                box-shadow: inset 0 -3px rgba(0, 0, 0, .2);
+
+            }
+            .mw-ui-button-group.quiet .mw-ui-button.selected {
+                background: #999;
+                color: #fff;
+                
+            }
+            .mw-ui-button-group.quiet .mw-ui-button.selected:hover {
+                box-shadow:  inset 0 -3px rgba(0, 0, 0, .2);
+                                border: 1px solid rgba(0, 0, 0, .2);
+
+            }
+            
+            .row { margin-bottom: 20px; }
+            
+            input, textarea {
+                font-size: 15px;
+                padding: 8px 10px;
+                -webkit-apperance:none;
+                border-radius: 3px;
+                border:2px solid #ccc;
+                -webkit-transition:border 0.2s ease-in;
+                
+            }
+            input:focus, textarea:focus {
+                border: 2px solid #347bff !important;
+                outline:0;
+                -webkit-transition:border 0.2s ease-in;
+                                box-shadow: 0px 0px 0px 3px rgba(52,123,255,0.1) !Important;
+
+            }
+            
+            input.warning {
+                border-color: #ffb50d;
+                
+            }
+            
+            input:disabled {
+                background-color: #eee;
+                border-color: #ccc;
+                
+            }
+            
+            input.error {
+                border-color: #d11813;
+            }
+            input.great {
+                border-color: #00af89;
+            }
+            
+            button {
+              font-size: 16px;
+                font-weight: bold;
+                color: #999;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                outline:0;
+                padding: 10px 15px;
+                cursor: pointer;
+                transition: border 0.2s ease-in;
+                color:#666;
+            }
+            
+            button.quiet {
+                border:none !Important;
+                background: transparent !Important;
+            }
+
+            button:hover {
+                
+            }
+            
+            button.default:hover {
+                background-color: rgba(0,0,0,0.05);    
+                box-shadow: inset 0px -1px 0px rgba(0,0,0,0.2);
+            }
+            
+            button.default:active {
+                background-color: rgba(0,0,0,0.1);
+                box-shadow: inset 0px 2px 2px rgba(0,0,0,0.08);
+                
+            }
+            
+            button.primary.quiet {
+                color: #347bff;
+                text-shadow: none;
+                
+            }
+            
+            button.negative.quiet {
+                color: #c41200;
+                text-shadow: none;
+                
+            }            
+
+             button.positive.quiet {
+                color: #00af89;
+                text-shadow: none;
+                
+            }
+            
+
+            
+            button.quiet:hover, button.light:hover {
+                box-shadow: none !important;
+            }
+            
+            button.default.quiet:hover, button.default.quiet.hover {
+                
+                background: rgba(0,0,0,0.05) !important;
+            }
+            
+            button.primary.quiet:hover, button.primary.quiet.hover {
+                
+                background: rgba(52,123,255,0.1) !important;
+            }
+            
+            button.positive.quiet:hover, button.positive.quiet.hover {
+                background: rgba(0,176,136,0.1) !important;
+
+            }            
+            
+            button.negative.quiet:hover, button.negative.quiet.hover {
+                
+                background: rgba(196,18,0,0.1) !important;
+            }            
+            
+            button:focus {
+                box-shadow: 0px 0px 0px 1px #fff, 0px 0px 0px 3px rgba(52,123,255,0.6);
+                
+               //-webkit-animation: ripple 0.4s 1;
+
+            }
+            
+            button.primary.quiet:focus, button.default.quiet:focus {
+                box-shadow: 0px 0px 0px 3px rgba(52,123,255,0.4) !Important;
+            }
+            
+            
+            
+            button.primary {
+                background:#347bff;
+                color: #fff;
+                border:1px transparent;
+                text-shadow: 0px 1px rgba(0,0,0,0.3);
+                
+            }
+            
+            button.primary:hover {
+                background: #2265e3;
+                box-shadow: inset 0px -2px 0px rgba(0,0,0,0.2), 0px 1px 1px rgba(0,0,0,0.1);
+                
+                //text-decoration: underline;
+            }
+
+            button.primary:active {
+                background: #0030bd;
+                //-webkit-animation: ripple 0.3s 1;
+                
+                box-shadow: inset 0px 3px 1px rgba(0,0,0,0.2);
+                
+            }
+            
+
+            button.positive {
+                background:#00b088;
+                color: #fff;
+                border:1px transparent;
+                text-shadow: 0px 1px rgba(0,0,0,0.3);
+                
+            }
+            
+            button.positive:hover {
+                background: #00a17c;
+                box-shadow: inset 0px -2px 0px rgba(0,0,0,0.2), 0px 1px 1px rgba(0,0,0,0.1);
+                
+                //text-decoration: underline;
+            }
+
+            button.positive:active {
+                background: #00704d;
+                box-shadow: inset 0px 2px 1px rgba(0,0,0,0.2);
+            }
+            button.negative {
+                background:#d41300;
+                color: #fff;
+                border:1px transparent;
+                text-shadow: 0px 1px rgba(0,0,0,0.3);
+                
+            }
+            
+            button.negative:hover {
+                background: #c41200;
+                box-shadow: inset 0px -2px 0px rgba(0,0,0,0.2), 0px 1px 1px rgba(0,0,0,0.1);
+                
+                //text-decoration: underline;
+            }
+
+            button.negative:active {
+                background: #8e0000;
+                box-shadow: inset 0px 2px 1px rgba(0,0,0,0.2);
+            }
+            
+            .text {
+                margin: 50px 0px;
+                font-size: 16px;
+                font-weight: 400;
+                color:#555;
+                line-height: 25px;
+            }
+            
+            .text h3 {
+                font-family: 'Linux Libertine', Georgia, Times, serif;
+                font-style: italic;
+                margin-bottom: 10px;
+                margin-top: 60px;
+                font-weight: normal;
+                font-size: 25px;
+                color:#000;
+            }
+            
+            a {
+                text-decoration: none;
+                
+            }
+            
+            a.blueLink {
+                color:#2265e3;
+                font-weight: 500;
+                border-bottom: 1px solid #c5d8fb;
+                box-shadow: inset 0 -1px 0 #c5d8fb;
+            }
+            a.blueLink:hover {
+                color: #1248ac;
+            }
+            
+            a.blueLink:focus {
+                background-color: rgba(52,123,255,0.2);
+                outline:none;
+            }
+            
+            a.redLink {
+                color:#d41300;
+                border-bottom: 1px dotted #d41300;
+                
+                font-weight: 500;
+            }
+            
+            
+        </style>
+    </head>
+    
+    
+    
+<body>
+  <div class="container" style="margin-top:50px;">
+      <h1>Text fields</h1>
+      <div class="row clearfix">
+        <div class="columns four"><input type="text" placeholder="Regular" /></div>
+      </div>
+      
+      <div class="row clearfix">
+        <div class="columns four"><input type="text" placeholder="Disabled" disabled /></div>
+      </div>
+      
+      <div class="row clearfix">
+        <div class="columns four"><input type="phone" class="" placeholder="Error"  /></div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="columns four"><input type="phone" class="" placeholder="Phone number" value="Warning" /></div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="columns four"><input type="phone" class="" placeholder="Phone number" value="Good to go" /></div>
+      </div>
+
+      <div class="row clearfix" style="margin-bottom:50px;">
+        <div class="columns four">
+            <textarea style="height:100px; width:400px;" placeholder="Write your comments here" ></textarea>
+        </div>
+      </div>
+      
+      <h1>Buttons</h1>
+      
+      <div class="row clearfix">
+        <div class="columns four"> <button class="default">Default</button></div>
+        <div class="columns four"> <button class="default quiet">Default</button></div>
+        <div class="columns four"> <button class="default quiet hover">Default</button></div>    
+      </div>
+
+      
+      <div class="row clearfix">
+        <div class="columns four"> <button class="primary">Primary</button></div>
+        <div class="columns four"> <button class="primary quiet">Primary</button></div>
+        <div class="columns four"> <button class="primary quiet hover">Primary</button></div>    
+      </div>
+
+       <div class="row clearfix">
+        <div class="columns four"> <button class="positive">Constructive</button></div>
+        <div class="columns four"> <button class="positive quiet">Constructive</button></div>
+        <div class="columns four"> <button class="positive quiet hover">Constructive</button></div>    
+      </div>
+
+
+       <div class="row clearfix">
+        <div class="columns four"> <button class="negative">Destructive</button></div>
+        <div class="columns four"> <button class="negative quiet">Destructive</button></div>
+        <div class="columns four"> <button class="negative quiet hover">Destructive</button></div>    
+      </div>
+      
+      
+      
+      <div class="row clearfix text" >
+          <h3>The Adventures of Tintin</h3>
+          The series is set during a largely <a href="#" class="redLink">realistic</a> <a href="#" class="blueLink">20th century</a>. Its hero is Tintin, a young <a href="#" class="blueLink external">Belgian</a> reporter. He is aided by his faithful <a href="#" class="redLink">fox terrier</a> dog Snowy.
+      </div>
+      
+      </div>
+
+  <script type="text/javascript">
+  $( document ).ready(function() {
+    
+        $('.mw-ui-button').click(function() {
+            $(this).toggleClass('selected');
+        });
+});
+      </script>
+      
+</body>
