@@ -30,26 +30,7 @@
    
    <div class="bar">asd</div>
     
-    <script type="text/javascript">
-    
-    $(function() {    
-    if (/ipad|iphone/gi.test(window.navigator.userAgent)) {
-    var events = "abort blur focus input scroll submit touchstart touchmove";
-    $("form, input").on(events, function(e) {
-return (function(window, elem, w, h) {
-var vh = window.getComputedStyle(elem,null).getPropertyValue(h);
-var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
-    var vwh = {"documentWidth": vw, "documentHeight": vh, "windowInnerWidth": window.innerWidth, "windowInnerHeight": window.innerHeight};
-console.log(vwh);
-var _vwh = document.getElementById("vwh");
-    _vwh.innerHTML = JSON.stringify(vwh)
-    $(".bar").css("bottom", (window.innerHeight - 44));
-return vwh  
-}(window, document.documentElement, "width", "height"));
-    }).focus();
-    };
-})
-    </script>
+ 
     </body>
     
         </html>
