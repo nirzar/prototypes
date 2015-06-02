@@ -34,16 +34,7 @@
    <div class="bar">asd</div>
     
     <script type="text/javascript">
-    $(document).ready(function() {
-
-    $('input').blur(function() {
-        $('input').removeClass("focus");
-      })
-      .focus(function() {
-        $(this).addClass("focus")
-      });
-  });
-        
+    
         
     $(function() {    
         
@@ -59,7 +50,7 @@ console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
     
-    if ($("#focusme").hasClass("focus"))
+    if ($("#focusme").is(':focus'))
     { 
         $(".bar").css("bottom", (window.innerHeight - 44));
     }
