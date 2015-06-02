@@ -5,7 +5,7 @@
     <style>
     .bar {
         position:absolute;
-        
+        bottom: 0;
         background:red;
         color: white;
         height:44px;
@@ -43,7 +43,7 @@ var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
 console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
-    $(".bar").css("bottom", (window.innerHeight - 44));
+    $(".bar").css("bottom", (window.innerHeight - 100));
 return vwh  
 }(window, document.documentElement, "width", "height"));
     }).focus();
