@@ -11,6 +11,9 @@
         height:44px;
         width:320px;
     }
+        input.focus {
+            border: 1px solid red;
+        }
         html {
     height : 100vh;
     width : 320px;
@@ -31,8 +34,20 @@
    <div class="bar">asd</div>
     
     <script type="text/javascript">
-    
+    $(document).ready(function() {
+
+    $('input').blur(function() {
+        $('input').removeClass("focus");
+      })
+      .focus(function() {
+        $(this).addClass("focus")
+      });
+  });
+        
+        
     $(function() {    
+        
+        
     if (/ipad|iphone/gi.test(window.navigator.userAgent)) {
     var events = "focus";
     $("form, input").on(events, function(e) {
@@ -44,7 +59,7 @@ console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
     
-    if ($("#focusme").is(":focus"))
+    if ($("#focusme").hasClass("focus"))
     { 
         $(".bar").css("bottom", (window.innerHeight - 44));
     }
