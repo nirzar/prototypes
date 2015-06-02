@@ -50,11 +50,10 @@ console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
     
-    if ($("#focusme").is(':focus'))
-    { 
+    $("#focusme").focus(function(){
         $(body).css("background","black");
         $(".bar").css("bottom", (window.innerHeight - 44));
-    }
+    });
     
     
 return vwh  
