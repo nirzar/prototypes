@@ -13,7 +13,7 @@
     }
         html {
     height : 100vh;
-    width : 100vw;
+    width : 320px;
 }
        </style>
     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -43,7 +43,7 @@ var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
 console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
-    $(".bar").css("bottom", (window.innerHeight - 100));
+    $(".bar").css("bottom", (window.innerHeight - 44));
 return vwh  
 }(window, document.documentElement, "width", "height"));
     }).focus();
