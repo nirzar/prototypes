@@ -27,6 +27,8 @@
 </form>
 <input type="text" />
 <div id="vwh"></div>
+   
+   <div class="bar"></div>
     
     <script type="text/javascript">
     
@@ -41,6 +43,7 @@ var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
 console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
+    $(".bar").css("top", window.innerHeight);
 return vwh  
 }(window, document.documentElement, "width", "height"));
     }).focus();
