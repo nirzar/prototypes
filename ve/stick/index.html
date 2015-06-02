@@ -1,5 +1,7 @@
 <html>
    <head>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <style>
     .bar {
         position:fixed;
@@ -9,6 +11,10 @@
         height:44px;
         width:320px;
     }
+        html {
+    height : 100vh;
+    width : 100vw;
+}
        </style>
     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -16,13 +22,31 @@
     
 <body>
         
-    This is the content page
-    <p></p>
-        <input type="text" />
-    <div class="bar">
-    this is a toolbar
-    </div>
+   <form>
+    <input type="text" />
+</form>
+<input type="text" />
+<div id="vwh"></div>
     
+    <script type="text/javascript">
+    
+    $(function() {    
+    if (/ipad|iphone/gi.test(window.navigator.userAgent)) {
+    var events = "abort blur focus input scroll submit touchstart touchmove";
+    $("form, input").on(events, function(e) {
+return (function(window, elem, w, h) {
+var vh = window.getComputedStyle(elem,null).getPropertyValue(h);
+var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
+    var vwh = {"documentWidth": vw, "documentHeight": vh, "windowInnerWidth": window.innerWidth, "windowInnerHeight": window.innerHeight};
+console.log(vwh);
+var _vwh = document.getElementById("vwh");
+    _vwh.innerHTML = JSON.stringify(vwh)
+return vwh  
+}(window, document.documentElement, "width", "height"));
+    }).focus();
+    };
+})
+    </script>
     </body>
     
         </html>
