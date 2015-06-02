@@ -23,7 +23,7 @@
 <body>
         
    <form>
-    <input type="text" />
+    <input type="text" id="focusme" />
 </form>
 <input type="text" />
 <div id="vwh"></div>
@@ -43,7 +43,13 @@ var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
 console.log(vwh);
 var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
-    //$(".bar").css("bottom", (window.innerHeight - 44));
+    
+    if ($("#focusme").onfocus)
+    { 
+        $(".bar").css("bottom", (window.innerHeight - 44));
+    }
+    
+    
 return vwh  
 }(window, document.documentElement, "width", "height"));
     }).focus();
