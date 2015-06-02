@@ -52,6 +52,7 @@ var _vwh = document.getElementById("vwh");
     _vwh.innerHTML = JSON.stringify(vwh)
     
     $("#focusme").focus(function(){
+        alert("pizza");
         $(body).css("background","black");
         $(".bar").css("bottom", (window.innerHeight - 44));
     });
