@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <input type="number" autocomplete="off" autocorrect="off" placeholder="Numbers"/>
+    <input type="text" autocomplete="off" autocorrect="off" placeholder="Numbers"/>
 <p>
     <button id="goFS">Go fullscreen<button>
 </p>
