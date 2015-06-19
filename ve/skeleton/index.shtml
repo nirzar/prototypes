@@ -8,6 +8,7 @@
   <title>Test</title>
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="viewport" content="width=devicewidth, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="yes">
  <meta name="mobile-web-app-capable" content="yes">
   <!-- Mobile Specific Metas
@@ -18,6 +19,14 @@
     <input type="text" autocomplete="off" autocorrect="off" placeholder="Numbers"/>
 <a href="#" onClick="toggleFullScreen()">Full Screen Mode</a>
 <script>
-    window.addEventListener("load", function() { window.scrollTo(0, 0); });
-</script>
+var body = document.documentElement;
+if (body.requestFullscreen) {
+  body.requestFullscreen();
+} else if (body.webkitrequestFullscreen) {
+  body.webkitrequestFullscreen();
+} else if (body.mozrequestFullscreen) {
+  body.mozrequestFullscreen();
+} else if (body.msrequestFullscreen) {
+  body.msrequestFullscreen();
+}</script>
 </body>
