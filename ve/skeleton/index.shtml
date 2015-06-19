@@ -29,6 +29,7 @@ asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>as
 var inputInFocus=false;
 $('input').focus(function(){
   inputInFocus=true;
+    alert('hello');
 });
 $('input').blur(function(){
   inputInFocus=false;
