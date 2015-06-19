@@ -164,6 +164,5 @@
 
     $('.content').focus();
     window.getSelection().setPosition(0);
-}    
 </script>
 </body>
