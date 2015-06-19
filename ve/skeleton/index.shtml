@@ -17,22 +17,17 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
     body { width:320px; }
+      .toolbar  {
+          height: 38px; 
+          position: fixed;
+          top: 0;
+          background: #f5f5f5;
+      }
     </style>
 </head>
 <body>
-    <input type="text" ContentEditable autocomplete="off" autocorrect="off" placeholder="Numbers" />
+<div class="toolbar">
     
-<a href="#" onClick="toggleFullScreen()">Full Screen Mode</a>
-asd<p>asd</p>
-asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>
+</div>
 
-<script type="text/javascript">
-window.addEventListener("load",function() {
-	// Set a timeout...
-	setTimeout(function(){
-		// Hide the address bar!
-		window.scrollTo(0, 1);
-	}, 0);
-});
-</script>
 </body>
