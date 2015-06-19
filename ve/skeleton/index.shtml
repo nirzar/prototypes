@@ -159,4 +159,13 @@
 </div>
 <div style="clear:both;"></div>
 </div></div>
+
+<script type="text/javascript">
+if(!$.browser.webkit) {
+    $('.content').focus();
+} else {
+    $('.content').focus();
+    window.getSelection().setPosition(0);
+}    
+</script>
 </body>
