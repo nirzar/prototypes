@@ -16,10 +16,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
-    body { width:320px;
-    font-size: 16px;
-        line-height: 20px;
+    body { width:100%;
+        font-size: 16px;
+        line-height: 25px;
         font-family: "Helvetica Neue", arial, sans-serif;
+        box-sizing: border-box;
+        padding: 20px;
+        padding-top: 60px;
+        
     }
       .toolbar  {
           height: 44px; 
