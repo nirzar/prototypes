@@ -15,6 +15,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  s
 </head>
 <body>
     <input type="text" ContentEditable autocomplete="off" autocorrect="off" placeholder="Numbers" />
@@ -25,14 +26,19 @@ asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>as
 
 <script type="text/javascript">
 
-    $('body')
-    .on('touchstart', 'input', function(e) {
-        e.target.focus();
-        return false;
-    })
-    .on('focus', 'input', function() {
-        window.scrollTo(0, 0);
-        return false;
-    });
+var inputInFocus=false;
+$('input').focus(function(){
+  inputInFocus=true;
+});
+$('input').blur(function(){
+  inputInFocus=false;
+  setTimeout("$(document).scrollTop(0);",0);
+});
+/*detect any scroll function and hide address bar*/
+$(window).scroll(function(){
+  if(!inputInFocus){
+setTimeout("$(document).scrollTop(0);",200);
+  }
+}); 
 </script>
 </body>
