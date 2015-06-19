@@ -15,9 +15,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  s
+  <style>
+    body { width:320px; }
+    </style>
 </head>
-<body width="320px">
+<body>
     <input type="text" ContentEditable autocomplete="off" autocorrect="off" placeholder="Numbers" />
     
 <a href="#" onClick="toggleFullScreen()">Full Screen Mode</a>
