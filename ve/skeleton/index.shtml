@@ -27,21 +27,12 @@ asd<p>asd</p>
 asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>asd<p>asd</p>
 
 <script type="text/javascript">
-
-var inputInFocus=false;
-$('input').focus(function(){
-  inputInFocus=true;
-    //alert('hello');
+window.addEventListener("load",function() {
+	// Set a timeout...
+	setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	}, 0);
 });
-$('input').blur(function(){
-  inputInFocus=false;
-  setTimeout("$(document).scrollTop(0);",0);
-});
-/*detect any scroll function and hide address bar*/
-$(window).scroll(function(){
-  if(!inputInFocus){
-setTimeout("$(document).scrollTop(0);",200);
-  }
-}); 
 </script>
 </body>
