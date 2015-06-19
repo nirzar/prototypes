@@ -17,7 +17,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   s
 </head>
-<body>
+<body width="320px">
     <input type="text" ContentEditable autocomplete="off" autocorrect="off" placeholder="Numbers" />
     
 <a href="#" onClick="toggleFullScreen()">Full Screen Mode</a>
