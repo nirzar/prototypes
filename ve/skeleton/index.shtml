@@ -14,10 +14,22 @@
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
     <textarea type="text" ContentEditable autocomplete="off" autocorrect="off" placeholder="Numbers">
     </textarea>
 <a href="#" onClick="toggleFullScreen()">Full Screen Mode</a>
+<script type="text/javascript">
 
+    $('body')
+    .on('touchstart', 'input', function(e) {
+        e.target.focus();
+        return false;
+    })
+    .on('focus', 'input', function() {
+        window.scrollTo(0, 0);
+        return false;
+    });
+</script>
 </body>
