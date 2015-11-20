@@ -25,7 +25,8 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -35,7 +36,7 @@
   <div class="container">
       
     <div class="row">
-        <div class="curtain"></div>
+        <div class="curtain" id="blackout" style="display:none;"></div>
       <div class="twelve column">
           <header class="header">
               <ul class="tools">
@@ -47,13 +48,13 @@
                   </li>
               </ul>
           </header>
-          <footer class="preview-card">
+          <footer class="preview-card" id="previewcard" style="display:none;">
               <h1>San Francisco Bay</h1>
               <div class="card-description">
                   San Francisco Bay is a shallow estuary that drains water from approximately forty percent of California. Water from the Sacramento and San Joaquin rivers, and from the Sierra Nevada mountains, passes through the Bay to the Pacific Ocean. 
               </div>
               <a class="fRight button primary-button">Read more</a>
-              <a class="fRight button secondary-button">Dismiss</a>
+              <a id="dismissMe" class="fRight button secondary-button">Dismiss</a>
               
 
           </footer>
@@ -72,7 +73,7 @@
         <div class="mainTitle">Golden Gate Bridge</div>
         	<div class="subTitle">Suspension bridge in San Francisco</div>
           <div class="divider"></div>
-	    <p>The <b>Golden Gate Bridge</b> is a <a href="/wiki/Suspension_bridge" title="Suspension bridge">suspension bridge</a> spanning the <a href="/wiki/Golden_Gate" title="Golden Gate">Golden Gate</a> strait, the 1 mile (1.6 km) wide, 3 mile (5 km) long channel between <a href="/wiki/San_Francisco_Bay" title="San Francisco Bay">San Francisco Bay</a> and the <a href="/wiki/Pacific_Ocean" title="Pacific Ocean">Pacific Ocean</a>. The structure links the <a href="/wiki/United_States" title="United States">U.S.</a> city of <a href="/wiki/San_Francisco" title="San Francisco">San Francisco</a>, on the northern tip of the <a href="/wiki/San_Francisco_Peninsula" title="San Francisco Peninsula">San Francisco Peninsula</a>, to <a href="/wiki/Marin_County,_California" title="Marin County, California">Marin County</a>, bridging both <a href="/wiki/U.S._Route_101_in_California" title="U.S. Route 101 in California">U.S. Route 101</a> and <a href="/wiki/California_State_Route_1" title="California State Route 1">California State Route 1</a> across the strait. The bridge is one of the most internationally recognized symbols of San Francisco, <a href="/wiki/California" title="California">California</a>, and the United States. It has been declared one of the <a href="/wiki/Wonders_of_the_Modern_World" title="Wonders of the Modern World" class="mw-redirect">Wonders of the Modern World</a> by the <a href="/wiki/American_Society_of_Civil_Engineers" title="American Society of Civil Engineers">American Society of Civil Engineers</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup></p>
+	    <p>The <b>Golden Gate Bridge</b> is a <a href="/wiki/Suspension_bridge" title="Suspension bridge">suspension bridge</a> spanning the <a href="/wiki/Golden_Gate" title="Golden Gate">Golden Gate</a> strait, the 1 mile (1.6 km) wide, 3 mile (5 km) long channel between <a id="previewMe" title="San Francisco Bay">San Francisco Bay</a> and the <a href="/wiki/Pacific_Ocean" title="Pacific Ocean">Pacific Ocean</a>. The structure links the <a href="/wiki/United_States" title="United States">U.S.</a> city of <a href="/wiki/San_Francisco" title="San Francisco">San Francisco</a>, on the northern tip of the <a href="/wiki/San_Francisco_Peninsula" title="San Francisco Peninsula">San Francisco Peninsula</a>, to <a href="/wiki/Marin_County,_California" title="Marin County, California">Marin County</a>, bridging both <a href="/wiki/U.S._Route_101_in_California" title="U.S. Route 101 in California">U.S. Route 101</a> and <a href="/wiki/California_State_Route_1" title="California State Route 1">California State Route 1</a> across the strait. The bridge is one of the most internationally recognized symbols of San Francisco, <a href="/wiki/California" title="California">California</a>, and the United States. It has been declared one of the <a href="/wiki/Wonders_of_the_Modern_World" title="Wonders of the Modern World" class="mw-redirect">Wonders of the Modern World</a> by the <a href="/wiki/American_Society_of_Civil_Engineers" title="American Society of Civil Engineers">American Society of Civil Engineers</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup></p>
 
         <div class="infobox">
         	<table class="infobox vcard" >
@@ -346,6 +347,21 @@ $7.00 (Pay by plate), $6.00 (<a href="/wiki/FasTrak" title="FasTrak">FasTrak</a>
     </div>
   </div>
 
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+            $( "#previewMe" ).click(function() {
+                $("#blackout").fadeIn();
+                $("#previewcard").slideToggle();
+            });
+        
+        $( "#dismissMe" ).click(function() {
+                $("#blackout").fadeOut();
+                $("#previewcard").slideToggle();
+            });
+});
+</script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
