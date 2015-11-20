@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="at-1x" sketch:type="MSArtboardGroup" transform="translate(-245.000000, -322.000000)" fill="#000000">
+            <g id="black" sketch:type="MSLayerGroup" transform="translate(129.500000, 314.587999)">
+                <path d="M128.681981,22.2897351 C125.691647,24.501304 121.461354,24.3825289 118.59006,21.7972041 C115.310635,18.8443974 115.04586,13.7921761 117.998666,10.5127521 C120.951473,7.23332799 126.003694,6.96855229 129.283118,9.92135898 C132.367899,12.6989078 132.785268,17.3340538 130.366323,20.6039543 L136.446258,26.683889 L134.761196,28.3689505 L128.681981,22.2897351 Z M128.959082,20.3815544 L128.959082,20.3815544 C131.456664,17.6077082 131.232708,13.334371 128.458862,10.8367887 C125.685016,8.33920638 121.411679,8.56316249 118.914096,11.3370087 C116.416514,14.1108549 116.64047,18.384192 119.414316,20.8817743 C122.188162,23.3793567 126.4615,23.1554006 128.959082,20.3815544 Z" id="search" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
