@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="15px" viewBox="0 0 23 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="at-1x" sketch:type="MSArtboardGroup" transform="translate(-746.000000, -323.000000)" fill="#000000">
+            <g id="black" sketch:type="MSLayerGroup" transform="translate(129.500000, 314.587999)">
+                <path d="M617,9.41200097 L639,9.41200097 L639.5,9.41200097 L639.5,8.41200097 L639,8.41200097 L617,8.41200097 L616.5,8.41200097 L616.5,9.41200097 L617,9.41200097 Z M617,16.412001 L639,16.412001 L639.5,16.412001 L639.5,15.412001 L639,15.412001 L617,15.412001 L616.5,15.412001 L616.5,16.412001 L617,16.412001 Z M617,23.412001 L639,23.412001 L639.5,23.412001 L639.5,22.412001 L639,22.412001 L617,22.412001 L616.5,22.412001 L616.5,23.412001 L617,23.412001 Z" id="menu" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
